@@ -136,3 +136,75 @@ for(let node of document.body.childNodes) {
 
     console.log(node);
 }
+
+// Функция конструктор
+
+function User(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.hello = function() {
+        console.log(`Hello ${this.name}`)
+    }
+}
+
+User.prototype.exit = function() {
+    console.log(`Пользовател ${this.name} ушел`);
+}
+
+const ivan = new User('Иван', 30);
+const vasya = new User('Вася', 25)
+
+ivan.exit();
+
+ivan.hello();
+vasya.hello();
+
+console.log(ivan)
+console.log(vasya)
+
+function sayName() {
+    console.log(this);
+    console.log(this.name)
+}
+
+const user = {
+    name: 'John',
+    username: 'Malik'
+}
+
+sayName.apply(user);
+sayName.call(user);
+
+function count(num) {
+   return this * num;
+}
+
+const  double =  count.bind(3);
+
+console.log(double(9));
+console.log(double(12));
+
+///// 
+
+const btn = document.querySelector('#current');
+
+// btn.addEventListener('click', () => {
+//     console.log(this)
+// })
+
+// 1)
+btn.addEventListener('click', function() {
+    this.style.backgroundColor = 'red';
+})
+
+// 2)
+
+// btn.addEventListener('click', (e) => {
+//     e.target.style.backgroundColor = 'red';
+// })
+
+
+const double2 = a => a * 3;
+
+console.log(double2(5))
