@@ -136,3 +136,77 @@ for(let node of document.body.childNodes) {
 
     console.log(node);
 }
+
+// Конструкторь this
+
+function showThis(a, b) {
+    console.log(this);
+
+    function sum() {
+        console.log(this);
+        return a + b
+    }
+
+    console.log(sum());
+}
+
+showThis(5 , 5);
+
+
+// filter
+
+const names = ['Ivan', 'Ann', 'Kaseniya', 'vakensiya'];
+
+const shortName = names.filter(function(name) {
+    return name.length < 5;
+})
+
+console.log(shortName);
+
+// map 
+
+const answers = ['AnAn', 'AliaK', 'baDina'];
+
+const result = answers.map(item => item.toLowerCase());
+
+console.log(result);
+
+// every/some
+
+const some = [5, 'Anf', 'fsdnf'];
+console.log(some.some(item => typeof(item) === 'number'));
+
+
+// reduce 
+
+const arr = [4, 5, 6, 7, 8, 9, 10];
+
+            // 0  +  4
+            // 4  +  5
+            // 9  +  6
+            // 15 +  7 ...
+
+const res = arr.reduce((sum, current) => sum + current);
+
+console.log(res);
+
+// 2)
+
+const arr2 = ['apple', 'orange', 'pear'];
+
+const res2 = arr2.reduce((sum, current) => `${sum}, ${current}`);
+
+console.log(res2);
+
+const obj = {
+    ivan: 'person',
+    ann: 'person',
+    dog: 'animal',
+    cat: 'animal'
+}
+
+const newArr = Object.entries(obj)
+.filter(item => item[1] === 'person')
+.map(item => item[0]);
+
+console.log(newArr);
