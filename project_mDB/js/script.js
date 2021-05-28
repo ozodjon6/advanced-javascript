@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const adv = document.querySelectorAll(".promo__adv img");
   const promoGenre = document.querySelector(".promo__genre");
   const promoBg = document.querySelector(".promo__bg");
-  const promoInteractiveItem = document.querySelectorAll(".promo__interactive-item");
+  const promoInteractiveItem = document.querySelectorAll(
+    ".promo__interactive-item"
+  );
   const movieList = document.querySelector(".promo__interactive-list");
   const addForm = document.querySelector("form.add"),
     addInput = addForm.querySelector(".adding__input"),
@@ -56,10 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (favourite) {
-        console.log("Добавляем любимый фильм");
+      console.log("Добавляем любимый фильм");
     }
 
-    even.target.reset();
+    event.target.reset();
   });
 
   const deleteElemnt = (arr) => {
@@ -90,13 +92,13 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
     });
 
-    document.querySelectorAll('.delete').forEach((btn, i) => {
-        btn.addEventListener('click', () => {
-            btn.parentElement.remove();
-            movieDB.movies.splice(i, 1);
+    document.querySelectorAll(".delete").forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.remove();
+        movieDB.movies.splice(i, 1);
 
-            createvMovieList(films, parent);    
-        })
+        createvMovieList(films, parent);
+      });
     });
   }
 
