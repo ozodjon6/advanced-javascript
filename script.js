@@ -136,3 +136,41 @@ for(let node of document.body.childNodes) {
 
     console.log(node);
 }
+
+// 69. Инкапсуляция
+
+class User {
+
+    constructor(name, age) {
+        this.name = name;
+        this._age = age;
+    }
+
+    #surname = 'Jumaev';
+ 
+    say() {
+        console.log(`Имя Пользавотела: ${this.name} ${this.#surname}, возраст ${this._age}`)
+    }
+
+    getAge() {
+        return this._age
+    }
+
+    setAge() {
+        if (typeof age === 'number' && age > 0 && age < 110) {
+            this._age = age
+        } else {
+            console.log('Недопустимое значения')
+        }
+    }
+}
+
+let ivan = new User('Ozodbek', 19);
+// console.log(ivan.surname);
+
+ivan.say();
+
+
+(function(){
+    
+}());
